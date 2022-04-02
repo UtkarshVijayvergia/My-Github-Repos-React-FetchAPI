@@ -133,7 +133,8 @@ const FetchAPI = () => {
                                             
                                             <div className="ml-3 w-100">
                                                 <h4 className="mb-0 mt-0 textLeft">{ curr.name }</h4>
-                                                <span className="text-left">{ curr.description }</span>
+                                                <span className="text-left">{ curr.description }</span><br />
+                                                <span className="text-left">Date: { curr.created_at }</span>
                                                 <br /><br />
                                                 {/* <div className="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats"> */}
 
