@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "nodejs-base64": "^2.0.0"
+  }
+}
