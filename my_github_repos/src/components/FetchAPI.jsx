@@ -30,8 +30,8 @@ const FetchAPI = () => {
     }, [])
 
 
-    console.log(typeof(users));
-    console.log(typeof(Object.assign({}, files)));
+   
+    // console.log(typeof(Object.assign({}, files)));
 
 
   return (
@@ -53,13 +53,13 @@ const FetchAPI = () => {
                                         </div>
                                         
                                         <div className="ml-3 w-100">
-                                            <h4 className="mb-0 mt-0 textLeft">{ curr.name }</h4>
+                                            <h4 className="mb-0 mt-0 textLeft">{ curr.name } , {typeof(users)} ,  {typeof(files)}</h4>
                                             <span className="text-left">{ curr.description }</span>
                                             
                                             <div className="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
                                                 <div className="d-flex flex-column">
                                                 {
-                                                    Array.from(files).map((inner_curr) => {
+                                                    [files].map((inner_curr) => {
                                                         return <div><p>{inner_curr.content}dwd</p></div>
                                                     })
                                                 }
