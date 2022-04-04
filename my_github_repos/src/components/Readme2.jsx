@@ -83,20 +83,23 @@ const Readme2 = () => {
         return decodeURIComponent(encodeURIComponent(window.atob(str)));
     }
 
+    let myStyle = {
+        "padding-right": "30px",
+        "padding-left": "30px",
+      }
 
 
 
     return (
         <div><br />
             <h2>MY PROJECTS</h2>
-            <div className='container-fluid mt-5'>
+            <div className='container mt-5'>
                 <div className='row text-center'>
-
 
                     {
                         users.sort(sortFunction).map((curr) => {
-                            
-                            return <div className="col-10 col-md-4 mt-5" key={ curr.id }>
+                            if(curr.name != 'php-jwt' && curr.name != 'Software-Engineering' && curr.name != 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name != 'Cryptonite' && curr.name != 'All-in-one-Linked-List' ){
+                                return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
                                     <div className="card p-2">
                                         <div className="d-flex align-items-center">
                                             
@@ -110,10 +113,11 @@ const Readme2 = () => {
                                                 <span className="text-left">
                                                     { 
                                                         (curr.description == null)?
-                                                           <span>description</span>: curr.description
-                                                         
+                                                        <span>description</span>: curr.description
+                                                        
                                                     }
                                                 </span>
+
                                                 <br /><br />
 
                                                 <span className="text-left">
@@ -121,38 +125,29 @@ const Readme2 = () => {
                                                 </span>
 
                                                 <br />
-                                                
-                                                
-                                                {/* { names } */}
-                                            
+
                                             </div>
                                         
                                         </div>
                                     </div>
                                     <br /><br /><br />
-                                </div>        
-                            
+                                </div>    
+                            }    
                         })
                     }
-                    
+
                 </div>
             </div>
 
-
-
-            <br /><br /><br /><hr /><br /><br />
-
-        
+            {/* <br /><br /><br /><hr /><br /><br />
 
             <h3>FORKED PROJECTS</h3>
             <div className='container-fluid mt-5'>
                 <div className='row text-center'>
 
-
-                
-                                
+                 
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
