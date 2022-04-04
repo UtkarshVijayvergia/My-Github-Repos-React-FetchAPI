@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 // const { base64decode } = require('nodejs-base64');
-import axios from 'axios';
+// import axios from 'axios';
+import moment from "moment";
 
 
 const Readme2 = () => {
@@ -110,12 +111,16 @@ const Readme2 = () => {
                                                     { 
                                                         (curr.description == null)?
                                                            <span>description</span>: curr.description
-                                                        
+                                                         
                                                     }
                                                 </span>
-                                                <br />
-                                                <span className="text-left">Created on: { curr.created_at }</span>
                                                 <br /><br />
+
+                                                <span className="text-left">
+                                                    Created on: { moment(curr.created_at, 'YYYY/MM/DD').format('MMM')} {moment(curr.created_at).utc().format('YYYY') }
+                                                </span>
+
+                                                <br />
                                                 
                                                 
                                                 {/* { names } */}
