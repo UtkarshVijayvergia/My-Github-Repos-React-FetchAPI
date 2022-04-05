@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 // const { base64decode } = require('nodejs-base64');
 // import axios from 'axios';
 import moment from "moment";
+import Image_dir from './Images';
+import "../components/images/Admin-panel-with-Django-MySQL.jpg"
 
 
 const Readme2 = () => {
@@ -38,6 +40,7 @@ const Readme2 = () => {
 
 
 
+    let image_var = 0 
 
     // var i = 1;
 
@@ -84,8 +87,8 @@ const Readme2 = () => {
     }
 
     let myStyle = {
-        "padding-right": "30px",
-        "padding-left": "30px",
+        "paddingRight": "30px",
+        "paddingLeft": "30px",
       }
 
 
@@ -101,11 +104,38 @@ const Readme2 = () => {
                             if(curr.name != 'php-jwt' && curr.name != 'Software-Engineering' && curr.name != 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name != 'Cryptonite' && curr.name != 'All-in-one-Linked-List' ){
                                 return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
                                     <div className="card p-2">
+                                        
+                                        
+                                        {/* <div> 
+                                            <img src={require(Image_dir[image_var].image)} alt='sample.img'></img> 
+                                        </div> */}
+                                        
+                                        <div className="d-flex align-items-center"> 
+                                            <img src={require(`../components/images/Admin-panel-with-Django-MySQL.jpg`)} alt='sampl' className="rounded" width="100%" height="auto" ></img> 
+                                        </div>
+                                        
+                                        <br />
+                                        
                                         <div className="d-flex align-items-center">
                                             
-                                            {/* <div className="image"> 
-                                                <img src="" className="rounded" width="155" />
-                                            </div> */}
+                                            {
+                                                
+                                                // Image_dir.map((image_curr) => {
+                                                //     return <div className="image"> 
+                                                //         <img src={image_curr.image} className="rounded" width="155" />
+                                                //     </div>
+                                                // })
+
+                                                
+                                            }
+                                            {/* <span>
+                                                <img src={require(`../components/images/Admin-panel-with-Django-MySQL.jpg`)} alt='sampl' className="rounded" width="155" ></img> 
+                                            </span> */}
+
+
+                                             
+                                            
+                                            
                                             
                                             <div className="ml-3 w-100">
                                                 
