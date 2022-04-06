@@ -89,8 +89,14 @@ const Readme2 = () => {
     let myStyle = {
         "paddingRight": "30px",
         "paddingLeft": "30px",
-      }
+    }
 
+    
+    let tag_style = {
+        "padding":"3px",
+    }
+
+    
 
 
     return (
@@ -106,10 +112,9 @@ const Readme2 = () => {
                                     <div className="card p-2">
                                         
                                         
-                                        {/* <div> 
-                                            <img src={require(Image_dir[image_var].image)} alt='sample.img'></img> 
-                                        </div> */}
                                         
+                                        
+
                                         <div className="d-flex align-items-center"> 
                                             <img src={require(`../components/images/Admin-panel-with-Django-MySQL.jpg`)} alt='sampl' className="rounded" width="100%" height="auto" ></img> 
                                         </div>
@@ -147,6 +152,36 @@ const Readme2 = () => {
                                                         
                                                     }
                                                 </span>
+
+                                                <br /><br />
+
+
+
+                                                {/* <span>{curr.topics.join(' ')}</span> */}
+
+                                                {
+                                                    curr.topics.sort(sortFunction).map((topics_curr) => {
+                                                        return <span>
+                                                                <div className="w3-tag w3-round w3-green" style={tag_style}>
+                                                                    <div className="w3-tag w3-round w3-green w3-border w3-border-white">
+                                                                        <p>{curr.topics.topics_curr}</p>
+                                                                        
+                                                                    </div>
+                                                                
+                                                            </div>
+                                                            &nbsp;&nbsp;
+                                                        </span>
+                                                    })
+                                                }
+
+                                                {/* <div className="w3-tag w3-round w3-green" style={tag_style}>
+                                                    <div className="w3-tag w3-round w3-green w3-border w3-border-white">
+                                                        <p>{curr.topics.join(' ')}</p>
+                                                    </div>
+                                                </div> */}
+
+
+
 
                                                 <br /><br />
 
