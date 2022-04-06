@@ -93,7 +93,16 @@ const Readme2 = () => {
 
     
     let tag_style = {
-        "padding":"3px",
+        // "padding":"1px",
+        
+        // "padding": "20px",
+        // "width": "200px",
+        // "height": "150px",
+    }
+
+    let inner_tag_style = {
+        "borderRadius": "15px",
+        "border": "2px solid #73AD21",
     }
 
     
@@ -160,18 +169,22 @@ const Readme2 = () => {
                                                 {/* <span>{curr.topics.join(' ')}</span> */}
 
                                                 {
-                                                    curr.topics.sort(sortFunction).map((topics_curr) => {
-                                                        return <span>
-                                                                <div className="w3-tag w3-round w3-green" style={tag_style}>
-                                                                    <div className="w3-tag w3-round w3-green w3-border w3-border-white">
-                                                                        <p>{curr.topics.topics_curr}</p>
+                                                    curr.topics.sort(sortFunction).map((topics_curr, index) => {
+                                                        return <span key={index}>
+                                                                <div className="" style={tag_style}>
+                                                                    <div className="" >
+                                                                        <p style={inner_tag_style}>{curr.topics[index]}</p>
                                                                         
                                                                     </div>
                                                                 
                                                             </div>
-                                                            &nbsp;&nbsp;
+                                                            {/* &nbsp;&nbsp; */}
                                                         </span>
                                                     })
+                                                }
+                                                {/* <br /><br /><br /> */}
+                                                {
+
                                                 }
 
                                                 {/* <div className="w3-tag w3-round w3-green" style={tag_style}>
