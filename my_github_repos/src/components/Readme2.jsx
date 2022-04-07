@@ -91,21 +91,42 @@ const Readme2 = () => {
         "paddingLeft": "30px",
     }
 
-    
-    let tag_style = {
-        // "padding":"1px",
-        
-        // "padding": "20px",
-        // "width": "200px",
-        // "height": "150px",
+
+    let mydisc = {
+        "display": "block",
+        "justifyContent": "right",
+        // "background": "#ddf4ff",
+        "marginLeft": "-15px",
+        "marginRight": "-15px",
+        // "textAlign": "left",
     }
 
-    let inner_tag_style = {
-        "borderRadius": "15px",
-        "border": "2px solid #73AD21",
+
+    let myname = {
+        "marginLeft": "-2px",
+        "marginRight": "-2px",
     }
 
-    
+
+    let mytag = {
+        "display": "block",
+        "justifyContent": "center",
+        "textAlign": "center",
+        "background": "#ddf4ff",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "lineHeight": "20px",
+        "padding": "3px 10px",
+        "margin": "3px 0 2px 2px",
+        "borderRadius": "30px",
+        "display": "inline-block", 
+        "color":"#0969da" 
+    }
+
+    let mydate = {
+        "margin": "-11px -11px -11px -11px ",
+
+    }
 
 
     return (
@@ -116,9 +137,9 @@ const Readme2 = () => {
 
                     {
                         users.sort(sortFunction).map((curr) => {
-                            if(curr.name != 'php-jwt' && curr.name != 'Software-Engineering' && curr.name != 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name != 'Cryptonite' && curr.name != 'All-in-one-Linked-List' ){
+                            if(curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
                                 return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
-                                    <div className="card p-2">
+                                    <div className="card">
                                         
                                         
                                         
@@ -130,7 +151,7 @@ const Readme2 = () => {
                                         
                                         <br />
                                         
-                                        <div className="d-flex align-items-center">
+                                        <div className="d-flex">
                                             
                                             {
                                                 
@@ -153,55 +174,45 @@ const Readme2 = () => {
                                             
                                             <div className="ml-3 w-100">
                                                 
-                                                <h4 className="mb-0 mt-0 textLeft">{ curr.name }</h4>
-                                                <span className="text-left">
-                                                    { 
-                                                        (curr.description == null)?
-                                                        <span>description</span>: curr.description
-                                                        
+                                                <h3 className="mb-0 mt-0 textLeft" style={myname}>{ curr.name }</h3>
+                                                <div className='p-4'>
+                                                    <span className="text-left" style={mydisc}>
+                                                        { 
+                                                            (curr.description == null)?
+                                                            <span>left to update</span>: curr.description
+                                                            
+                                                        }
+                                                    </span>
+                                                </div>
+                                             
+                                                    {
+                                                        curr.topics.map((topics_curr, index) => {
+                                                            return <>
+                                                                <div key={index} className="tags"style={mytag}>
+                                                                    {curr.topics[index]}
+                                                                </div>
+                                                                &nbsp;
+                                                            </>
+                                                        })
                                                     }
-                                                </span>
 
-                                                <br /><br />
-
-
-
-                                                {/* <span>{curr.topics.join(' ')}</span> */}
-
-                                                {
+                                                {/* {
                                                     curr.topics.sort(sortFunction).map((topics_curr, index) => {
-                                                        return <span key={index}>
-                                                                <div className="" style={tag_style}>
-                                                                    <div className="" >
-                                                                        <p style={inner_tag_style}>{curr.topics[index]}</p>
-                                                                        
-                                                                    </div>
-                                                                
+                                                        return <>
+                                                            <div key={index} className="tags"style={mytag}>
+                                                                {curr.topics[index]}
                                                             </div>
-                                                            {/* &nbsp;&nbsp; */}
-                                                        </span>
+                                                            &nbsp;&nbsp;
+                                                        </>
                                                     })
-                                                }
-                                                {/* <br /><br /><br /> */}
-                                                {
+                                                } */}
 
-                                                }
+                                               <br /><hr />
 
-                                                {/* <div className="w3-tag w3-round w3-green" style={tag_style}>
-                                                    <div className="w3-tag w3-round w3-green w3-border w3-border-white">
-                                                        <p>{curr.topics.join(' ')}</p>
+                                                    <div className="text-left" style={mydate}>
+                                                        Created on: { moment(curr.created_at, 'YYYY/MM/DD').format('MMM')} {moment(curr.created_at).utc().format('YYYY') }
                                                     </div>
-                                                </div> */}
-
-
-
-
-                                                <br /><br />
-
-                                                <span className="text-left">
-                                                    Created on: { moment(curr.created_at, 'YYYY/MM/DD').format('MMM')} {moment(curr.created_at).utc().format('YYYY') }
-                                                </span>
-
+                                          
                                                 <br />
 
                                             </div>
