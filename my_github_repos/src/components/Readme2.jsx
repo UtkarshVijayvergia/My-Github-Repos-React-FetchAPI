@@ -148,9 +148,9 @@ const Readme2 = () => {
                                         <div className="d-flex align-items-center">
                                             {
                                                 (curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'To-do-list-React' && curr.name !=='My-Github-Repos-React-FetchAPI' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?
-                                                <img src={require(`../components/images/Admin-panel-with-Django-MySQL.jpg`)} alt='sampl' className="rounded" width="100%" height="auto" ></img>
+                                                <img src={require(`../components/images/Admin-panel-with-Django-MySQL.jpg`)} alt={curr.name} className="rounded" width="100%" height="auto" ></img>
                                                 :
-                                                <img src={require(`../components/images/${curr.name}.jpg`)} alt='sampl' className="rounded" width="100%" height="auto" ></img>
+                                                <img src={require(`../components/images/${curr.name}.jpg`)} alt={curr.name} className="rounded" width="100%" height="auto" ></img>
                                             }
                                             {/* <img src={require(`../components/images/Admin-panel-with-Django-MySQL.jpg`)} alt='sampl' className="rounded" width="100%" height="auto" ></img>  */}
                                         </div>

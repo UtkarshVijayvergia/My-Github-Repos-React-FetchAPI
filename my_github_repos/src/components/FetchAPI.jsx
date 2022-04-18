@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 // const { base64decode } = require('nodejs-base64');
+// import axios from 'axios';
+import moment from "moment";
+import Image_dir from './Images';
+import "../components/images/Admin-panel-with-Django-MySQL.jpg"
 
-const FetchAPI = () => {
 
-
-
+const Readme2 = () => {
     const [users, setUsers] = useState([])
 
     const getusers = async () => {
@@ -22,178 +24,113 @@ const FetchAPI = () => {
     }, [])
 
 
+    function sortFunction(a,b){  
+        var dateA = new Date(a.created_at).getTime();
+        var dateB = new Date(b.created_at).getTime();
+        return dateA < dateB ? 1 : -1;  
+    }; 
 
 
-    let x = 'Admin-panel-with-Django-MySQL'
-
-    const [files, setfiles] = useState([])
-    const getfiles = async (x) => {
-        try{
-            const response2 = await fetch('https://api.github.com/repos/UtkarshVijayvergia/Admin-panel-with-Django-MySQL/contents/README.md');
-            // console.log(response2.json());
-            setfiles(await response2.json());
-        }
-        catch(error){
-            console.log(error);
-        }
+    let myStyle = {
+        "paddingRight": "30px",
+        "paddingLeft": "30px",
     }
 
-    useEffect(() => {
-        getfiles()
-    }, [])
 
-    // console.log(files.content)
-
-
-
-    // const [, name2] = useState('utkarsh');   
-
-    // const toggler = () => {
-    //     if(name1 === 'utkarsh'){
-    //     name2('vijayvergia');
-    //     // console.log(name1);
-    //     }
-    //     else{
-    //     name2('utkarsh')
-    //     // console.log(name1);
-    //     }
-    // }
-
-
-
-    
-
-    // async function getreadme(x){        
-    //     try{
-    //         let response = await fetch('https://api.github.com/repos/UtkarshVijayvergia/' + x + '/contents/README.md')
-    //         let data = await response.json();
-    //         // let meta = await data.content
-    //         // console.log(data.content);
-    //         return data
-    //     }
-    //     catch(error){
-    //         // console.log(error);
-    //     }
-    // }
-
-
-
-
-    // const currentloginid = async (x) => {
-    //     const response = await fetch('https://api.github.com/repos/UtkarshVijayvergia/' + x + '/contents/README.md')
-      
-    //     const data = await response.json()
-        
-    //     console.log(JSON.stringify(data))
-      
-    //     return JSON.stringify(data)
-    // }
-
-
-    // currentloginid(x)
-
-    // console.log(getreadme(x));
-  
-
-
-
-
-    // function b64_to_utf8(str) {
-    //     // Going backwards: from bytestream, to percent-encoding, to original string.
-    //     return decodeURIComponent(atob(str).split('').map(function(c) {
-    //         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    //     }).join(''));
-    // }
-
-
-    function b64_to_utf8( str ) {
-        str = str.replace(/\s/g, '');    
-        return decodeURIComponent(encodeURIComponent(window.atob(str)));
+    let mydisc = {
+        "display": "block",
+        "justifyContent": "right",
+        "marginLeft": "-15px",
+        "marginRight": "-15px",
     }
 
+
+    let myname = {
+        "marginLeft": "-2px",
+        "marginRight": "-2px",
+    }
+
+
+    let mytag = {
+        "display": "block",
+        "justifyContent": "center",
+        "textAlign": "center",
+        "background": "#ddf4ff",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "lineHeight": "20px",
+        "padding": "3px 10px",
+        "margin": "3px 0 2px 2px",
+        "borderRadius": "30px",
+        "display": "inline-block", 
+        "color":"#0969da" 
+    }
+
+    let mydate = {
+        "margin": "-11px -11px -11px -11px ",
+
+    }
 
 
     return (
         <div><br />
             <h2>MY PROJECTS</h2>
-            <div className='container-fluid mt-5'>
+            <div className='container mt-5'>
                 <div className='row text-center'>
-
 
                     {
-                        users.map((curr) => {
-                            if(!curr.fork){
-                            return <div className="col-10 col-md-4 mt-5" key={ curr.id }>
-                                    <div className="card p-2">
+                        users.sort(sortFunction).map((curr) => {
+                            if(curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
+                                return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
+                                    <div className="card">
                                         <div className="d-flex align-items-center">
-                                            
-                                            {/* <div className="image"> 
-                                                <img src="" className="rounded" width="155" />
-                                            </div> */}
-                                            
+                                            {
+                                                (curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'To-do-list-React' && curr.name !=='My-Github-Repos-React-FetchAPI' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?
+                                                <img src={require(`../components/images/Admin-panel-with-Django-MySQL.jpg`)} alt={curr.name} className="rounded" width="100%" height="auto" ></img>
+                                                :
+                                                <img src={require(`../components/images/${curr.name}.jpg`)} alt={curr.name} className="rounded" width="100%" height="auto" ></img>
+                                            }
+                                        </div>
+                                        <br />
+                                        <div className="d-flex">
                                             <div className="ml-3 w-100">
-                                                <h4 className="mb-0 mt-0 textLeft">{ curr.name }</h4>
-                                                <span className="text-left">{ curr.description }</span><br />
-                                                <span className="text-left">Date: { curr.created_at }</span>
-                                                <br /><br />
-                                                {/* <div className="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats"> */}
-
-                                                    {/* {
-                                                        [files].map((inner_curr) => {
-                                                            return <div key={inner_curr.url}><p>{String(inner_curr.content)}</p></div>
+                                                <h3 className="mb-0 mt-0 textLeft" style={myname}>{ curr.name }</h3>
+                                                <div className='p-4'>
+                                                    <span className="text-left" style={mydisc}>
+                                                        { 
+                                                            (curr.description == null)?
+                                                            <span>left to update</span>: curr.description
+                                                            
+                                                        }
+                                                    </span>
+                                                </div>
+                                                    {
+                                                        curr.topics.map((topics_curr, index) => {
+                                                            return <>
+                                                                <div key={index} className="tags"style={mytag}>
+                                                                    {curr.topics[index]}
+                                                                </div>
+                                                                &nbsp;
+                                                            </>
                                                         })
-                                                    } */}
-
-                                                {/* </div> */}
-                                            
+                                                    }
+                                               <br /><hr />
+                                                    <div className="text-left" style={mydate}>
+                                                        Created on: { moment(curr.created_at, 'YYYY/MM/DD').format('MMM')} {moment(curr.created_at).utc().format('YYYY') }
+                                                    </div>
+                                                <br />
                                             </div>
-                                        
                                         </div>
                                     </div>
                                     <br /><br /><br />
-                                </div>        
-                            }
+                                </div>    
+                            }    
                         })
                     }
-                    
-                </div>
-            </div>
-
-
-
-            <br /><br /><br /><hr /><br /><br />
-
-        
-
-            <h3>FORKED PROJECTS</h3>
-            <div className='container-fluid mt-5'>
-                <div className='row text-center'>
-
-
-                {
-                        users.map((curr) => {
-                            if(curr.fork){
-                            return <div className="col-10 col-md-4 mt-5" key={ curr.id }>
-                                    <div className="card p-2">
-                                        <div className="d-flex align-items-center">
-
-                                            <div className="ml-3 w-100">
-                                                <h4 className="mb-0 mt-0 textLeft">{ curr.name }</h4>
-                                                <span className="text-left">{ curr.description }</span>
-                                            </div>
-                                        
-                                        </div>
-                                    </div>
-                                    <br /><br /><br />
-                                </div>        
-                            }
-                        })
-                    }
-                                
                 </div>
             </div>
         </div>
     )
 }
 
-export default FetchAPI
+export default Readme2

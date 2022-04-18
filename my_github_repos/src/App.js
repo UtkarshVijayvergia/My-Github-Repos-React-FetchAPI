@@ -8,7 +8,7 @@ import Readme2 from './components/Readme2';
 function App() {
     return (
         <div className="App">
-            <Readme2/>
+            <FetchAPI/>
         </div>
     );
 }
