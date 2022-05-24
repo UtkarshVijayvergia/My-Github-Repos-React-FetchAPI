@@ -34,6 +34,8 @@ const Readme2 = () => {
     let myStyle = {
         "paddingRight": "30px",
         "paddingLeft": "30px",
+        // "height":"700px",
+        
     }
 
 
@@ -42,6 +44,9 @@ const Readme2 = () => {
         "justifyContent": "right",
         "marginLeft": "-15px",
         "marginRight": "-15px",
+        // "height":"180px",
+        // "flexGrow": "0",
+        // "flexShrink": "0",
     }
 
 
@@ -71,6 +76,10 @@ const Readme2 = () => {
 
     }
 
+    let flexbox_sizer = {
+        
+    }
+
 
     return (
         <div><br />
@@ -80,7 +89,7 @@ const Readme2 = () => {
 
                     {
                         users.sort(sortFunction).map((curr) => {
-                            if(curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
+                            if(curr.name !== 'Software-testing' && curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
                                 return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
                                     <div className="card">
                                         <div className="d-flex align-items-center">
