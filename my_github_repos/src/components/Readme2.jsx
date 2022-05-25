@@ -136,8 +136,8 @@ const Readme2 = () => {
                 <div className='row text-center'>
 
                     {
-                        users.sort(sortFunction).map((curr) => {
-                            if(curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
+                        users.sort(sortFunction).map((curr) => { 
+                            if(curr.name !== 'Software-testing' && curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
                                 return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
                                     <div className="card">
                                         

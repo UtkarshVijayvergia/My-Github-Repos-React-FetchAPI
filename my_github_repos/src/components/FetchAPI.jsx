@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import moment from "moment";
 import Image_dir from './Images';
 import "../components/images/Admin-panel-with-Django-MySQL.jpg"
+import "./projects.css"
 
 
 const Readme2 = () => {
@@ -17,7 +18,7 @@ const Readme2 = () => {
         catch(error){
             console.log(error);
         }
-    }
+    } 
 
     useEffect(() => {
         getusers()
@@ -92,10 +93,10 @@ const Readme2 = () => {
                             if(curr.name !== 'Software-testing' && curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
                                 return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
                                     <div className="card">
-                                        <div className="d-flex align-items-center">
+                                        <div className="d-flex align-items-center imagesizer_outer">
                                             {
-                                                (curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'To-do-list-React' && curr.name !=='My-Github-Repos-React-FetchAPI' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?
-                                                <img src={require(`../components/images/Admin-panel-with-Django-MySQL.jpg`)} alt={curr.name} className="rounded" width="100%" height="auto" ></img>
+                                                (curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'To-do-list-React' && curr.name !=='Project-Showcase' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?
+                                                <img src={require(`../components/images/sample.jpg`)} alt={curr.name} className="rounded imagesizer" width="100%" height="auto" ></img>
                                                 :
                                                 <img src={require(`../components/images/${curr.name}.jpg`)} alt={curr.name} className="rounded" width="100%" height="auto" ></img>
                                             }
@@ -116,7 +117,7 @@ const Readme2 = () => {
                                                     {
                                                         curr.topics.map((topics_curr, index) => {
                                                             return <>
-                                                                <div key={index} className="tags"style={mytag}>
+                                                                <div key={index} className="tags" style={mytag}>
                                                                     {curr.topics[index]}
                                                                 </div>
                                                                 &nbsp;
