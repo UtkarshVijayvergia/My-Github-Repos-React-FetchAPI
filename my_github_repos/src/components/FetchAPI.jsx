@@ -45,15 +45,14 @@ const Readme2 = () => {
         "justifyContent": "right",
         "marginLeft": "-15px",
         "marginRight": "-15px",
-        // "height":"180px",
-        // "flexGrow": "0",
-        // "flexShrink": "0",
+        "height":"100px",
     }
 
 
     let myname = {
         "marginLeft": "-2px",
         "marginRight": "-2px",
+        "height": "60px",
     }
 
 
@@ -69,7 +68,7 @@ const Readme2 = () => {
         "margin": "3px 0 2px 2px",
         "borderRadius": "30px",
         "display": "inline-block", 
-        "color":"#0969da" 
+        "color":"#0969da",
     }
 
     let mydate = {
@@ -95,7 +94,7 @@ const Readme2 = () => {
                                     <div className="card">
                                         <div className="d-flex align-items-center imagesizer_outer">
                                             {
-                                                (curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'To-do-list-React' && curr.name !=='Project-Showcase' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?
+                                                (curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'To-do-list-React' && curr.name !== 'Admin-panel-with-Django-MySQL' && curr.name !=='Project-Showcase' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?
                                                 <img src={require(`../components/images/sample.jpg`)} alt={curr.name} className="rounded imagesizer" width="100%" height="auto" ></img>
                                                 :
                                                 <img src={require(`../components/images/${curr.name}.jpg`)} alt={curr.name} className="rounded" width="100%" height="auto" ></img>
@@ -114,6 +113,7 @@ const Readme2 = () => {
                                                         }
                                                     </span>
                                                 </div>
+                                                <div className='tagHeight'>
                                                     {
                                                         curr.topics.map((topics_curr, index) => {
                                                             return <>
@@ -124,6 +124,7 @@ const Readme2 = () => {
                                                             </>
                                                         })
                                                     }
+                                                </div>
                                                <br /><hr />
                                                     <div className="text-left" style={mydate}>
                                                         Created on: { moment(curr.created_at, 'YYYY/MM/DD').format('MMM')} {moment(curr.created_at).utc().format('YYYY') }
