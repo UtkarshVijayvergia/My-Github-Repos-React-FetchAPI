@@ -4,6 +4,23 @@ import "./projects.css"
 
 
 const Readme2 = () => {
+
+    let mydisc = {
+        "display": "block",
+        "justifyContent": "right",
+        "marginLeft": "-15px",
+        "marginRight": "-15px",
+        "height":"130px",
+    }
+
+    let myStyle = {
+        "paddingRight": "30px",
+        "paddingLeft": "30px",        
+    }
+
+
+
+
     const [users, setUsers] = useState([])
 
     const getusers = async () => {
@@ -21,6 +38,8 @@ const Readme2 = () => {
     }, [])
 
 
+
+
     function sortFunction(a,b){  
         var dateA = new Date(a.created_at).getTime();
         var dateB = new Date(b.created_at).getTime();
@@ -28,48 +47,6 @@ const Readme2 = () => {
     }; 
 
 
-    let myStyle = {
-        "paddingRight": "30px",
-        "paddingLeft": "30px",
-        // "height":"700px",
-        
-    }
-
-
-    let mydisc = {
-        "display": "block",
-        "justifyContent": "right",
-        "marginLeft": "-15px",
-        "marginRight": "-15px",
-        "height":"130px",
-    }
-
-
-    let myname = {
-        "marginLeft": "-2px",
-        "marginRight": "-2px",
-        "height": "60px",
-    }
-
-
-    let mytag = {
-        "justifyContent": "center",
-        "textAlign": "center",
-        "background": "#ddf4ff",
-        "fontSize": "12px",
-        "fontWeight": "600",
-        "lineHeight": "20px",
-        "padding": "3px 10px",
-        "margin": "3px 0 2px 2px",
-        "borderRadius": "30px",
-        "display": "inline-block", 
-        "color":"#0969da",
-    }
-
-    let mydate = {
-        "margin": "-11px -11px -11px -11px ",
-
-    }
 
 
     return (
@@ -77,7 +54,6 @@ const Readme2 = () => {
             <h2>MY PROJECTS</h2>
             <div className='container mt-5'>
                 <div className='row text-center'>
-
                     {
                         users.sort(sortFunction).map((curr) => {
                             if(curr.name !== 'PageIt-client' && curr.name !== 'PageIt-server' && curr.name !== 'Software-testing' && curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
@@ -94,7 +70,7 @@ const Readme2 = () => {
                                         <br />
                                         <div className="d-flex">
                                             <div className="ml-3 w-100">
-                                                <h3 className="mb-0 mt-0 textLeft" style={myname}>{ curr.name }</h3>
+                                                <h3 className="mb-0 mt-0 textLeft myname">{ curr.name }</h3>
                                                 <div className='p-4'>
                                                     <span className="text-left" style={mydisc}>
                                                         { 
@@ -104,12 +80,11 @@ const Readme2 = () => {
                                                         }
                                                     </span>
                                                 </div>
-
                                                 <div className='tagHeight'>
                                                     {
                                                         curr.topics.map((topics_curr, index) => {
                                                             return <>
-                                                                <div key={index} className="tags" style={mytag}>
+                                                                <div key={index} className="tags mytag">
                                                                     {curr.topics[index]}
                                                                 </div>
                                                                 &nbsp;
@@ -117,14 +92,11 @@ const Readme2 = () => {
                                                         })
                                                     }
                                                 </div>
-
                                                <br />
                                                <hr />
-
-                                                <div className="text-left" style={mydate}>
+                                                <div className="text-left mydate">
                                                     Created on: { moment(curr.created_at, 'YYYY/MM/DD').format('MMM')} {moment(curr.created_at).utc().format('YYYY') }
                                                 </div>
-
                                                 <br />
                                             </div>
                                         </div>
@@ -139,5 +111,7 @@ const Readme2 = () => {
         </div>
     )
 }
+
+
 
 export default Readme2
