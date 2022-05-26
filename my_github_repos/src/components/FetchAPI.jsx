@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// const { base64decode } = require('nodejs-base64');
-// import axios from 'axios';
 import moment from "moment";
-import Image_dir from './Images';
-import "../components/images/Admin-panel-with-Django-MySQL.jpg"
 import "./projects.css"
 
 
@@ -45,7 +41,7 @@ const Readme2 = () => {
         "justifyContent": "right",
         "marginLeft": "-15px",
         "marginRight": "-15px",
-        "height":"100px",
+        "height":"130px",
     }
 
 
@@ -57,7 +53,6 @@ const Readme2 = () => {
 
 
     let mytag = {
-        "display": "block",
         "justifyContent": "center",
         "textAlign": "center",
         "background": "#ddf4ff",
@@ -76,10 +71,6 @@ const Readme2 = () => {
 
     }
 
-    let flexbox_sizer = {
-        
-    }
-
 
     return (
         <div><br />
@@ -89,7 +80,7 @@ const Readme2 = () => {
 
                     {
                         users.sort(sortFunction).map((curr) => {
-                            if(curr.name !== 'Software-testing' && curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
+                            if(curr.name !== 'PageIt-client' && curr.name !== 'PageIt-server' && curr.name !== 'Software-testing' && curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
                                 return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
                                     <div className="card">
                                         <div className="d-flex align-items-center imagesizer_outer">
@@ -113,6 +104,7 @@ const Readme2 = () => {
                                                         }
                                                     </span>
                                                 </div>
+
                                                 <div className='tagHeight'>
                                                     {
                                                         curr.topics.map((topics_curr, index) => {
@@ -125,10 +117,14 @@ const Readme2 = () => {
                                                         })
                                                     }
                                                 </div>
-                                               <br /><hr />
-                                                    <div className="text-left" style={mydate}>
-                                                        Created on: { moment(curr.created_at, 'YYYY/MM/DD').format('MMM')} {moment(curr.created_at).utc().format('YYYY') }
-                                                    </div>
+
+                                               <br />
+                                               <hr />
+
+                                                <div className="text-left" style={mydate}>
+                                                    Created on: { moment(curr.created_at, 'YYYY/MM/DD').format('MMM')} {moment(curr.created_at).utc().format('YYYY') }
+                                                </div>
+
                                                 <br />
                                             </div>
                                         </div>
