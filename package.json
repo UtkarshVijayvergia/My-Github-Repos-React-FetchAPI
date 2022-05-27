@@ -1,5 +1,6 @@
 {
-  "name": "my_github_repos",
+  "name": "Project-Showcase",
+  "homepage": "https://UtkarshVijayvergia.github.io/Project-Showcase",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,13 +9,16 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "datejs": "^1.0.0-rc3",
+    "gh-pages": "^4.0.0",
     "moment": "^2.29.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
