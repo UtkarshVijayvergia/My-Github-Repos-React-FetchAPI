@@ -3,7 +3,7 @@ const Image_dir = [
         id: 1,
         image: "./image/sample.jpg",
     },
-
+ 
     {
         id: 2,
         image: "./image/sample.jpg",
