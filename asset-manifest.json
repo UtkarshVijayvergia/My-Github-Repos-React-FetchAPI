@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cc3ea2e5.css",
+    "main.js": "/static/js/main.95763cd7.js",
+    "static/media/sample.jpg": "/static/media/sample.92dd3ced382b69a08335.jpg",
+    "static/media/Admin-panel-with-Django-MySQL.jpg": "/static/media/Admin-panel-with-Django-MySQL.ae01944197eaf3da48ee.jpg",
+    "static/media/Project-Showcase.jpg": "/static/media/Project-Showcase.c9e5176207bbe9457952.jpg",
+    "static/media/Car-sale-and-usage-analysis.jpg": "/static/media/Car-sale-and-usage-analysis.4884890306433c81203d.jpg",
+    "static/media/php-mysql-form-filler.jpg": "/static/media/php-mysql-form-filler.714aa1940b19b1c1bde6.jpg",
+    "static/media/To-do-list-React.jpg": "/static/media/To-do-list-React.c0084f43d1c47a4570ea.jpg",
+    "static/media/Expense-Manager.jpg": "/static/media/Expense-Manager.49b59f3bc34b97130678.jpg",
+    "index.html": "/index.html",
+    "main.cc3ea2e5.css.map": "/static/css/main.cc3ea2e5.css.map",
+    "main.95763cd7.js.map": "/static/js/main.95763cd7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc3ea2e5.css",
+    "static/js/main.95763cd7.js"
+  ]
+}
