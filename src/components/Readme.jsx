@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
 
-const FetchAPI = () => {
+const Readme = () => {
 
 
 
@@ -214,4 +214,4 @@ const FetchAPI = () => {
     )
 }
 
-export default FetchAPI
+export default Readme

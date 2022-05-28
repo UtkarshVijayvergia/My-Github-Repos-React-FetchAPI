@@ -3,7 +3,7 @@ import moment from "moment";
 import "./projects.css"
 
 
-const Readme2 = () => {
+const FetchAPI = () => {
 
     let mydisc = {
         "display": "block",
@@ -44,7 +44,9 @@ const Readme2 = () => {
         return dateA < dateB ? 1 : -1;  
     }; 
 
-
+    // let nums = Object.keys(users).length;
+    // console.log(nums);
+    // console.log(users);
     
 
     return (
@@ -58,12 +60,12 @@ const Readme2 = () => {
                                 return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
                                     <div className="card">
                                         <a target="_blank" rel="noopener noreferrer" href={`https://github.com/UtkarshVijayvergia/${curr.name}/`}><div className="d-flex align-items-center imagesizer_outer">
-                                            {
+                                            {/* {
                                                 (curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'To-do-list-React' && curr.name !== 'Admin-panel-with-Django-MySQL' && curr.name !=='Project-Showcase' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?
                                                 <img src={require(`../components/images/sample.jpg`)} alt={curr.name} className="rounded imagesizer" width="100%" height="auto" ></img>
                                                 :
                                                 <img src={require(`../components/images/${curr.name}.jpg`)} alt={curr.name} className="rounded" width="100%" height="auto" ></img>
-                                            }
+                                            } */}
                                         </div></a>
                                         <br />
                                         <div className="d-flex">
@@ -114,4 +116,4 @@ const Readme2 = () => {
 
 
 
-export default Readme2
+export default FetchAPI

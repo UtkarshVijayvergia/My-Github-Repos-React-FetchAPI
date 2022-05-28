@@ -2,13 +2,16 @@
 
 import './App.css';
 import FetchAPI from './components/FetchAPI'
-import Readme from './components/Readme'
-import Readme2 from './components/Readme2';
+import Projects from './components/projects/Projects';
+
+import RepoOrder from './components/RepoOrder';
 
 function App() {
     return (
         <div className="App">
-            <FetchAPI/>
+            {/* <FetchAPI/>
+            <RepoOrder/> */}
+            <Projects/>
         </div>
     );
 }
