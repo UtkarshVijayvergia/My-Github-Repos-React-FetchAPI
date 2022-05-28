@@ -9,7 +9,9 @@
     height: 50px;
 }
 
-
+#alink{
+    text-decoration: none;
+}
 
 .mytag{
     justify-content: center;

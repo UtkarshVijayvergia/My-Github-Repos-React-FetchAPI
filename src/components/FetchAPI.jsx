@@ -19,8 +19,6 @@ const Readme2 = () => {
     }
 
 
-
-
     const [users, setUsers] = useState([])
 
     const getusers = async () => {
@@ -47,7 +45,7 @@ const Readme2 = () => {
     }; 
 
 
-
+    
 
     return (
         <div><br />
@@ -59,18 +57,20 @@ const Readme2 = () => {
                             if(curr.name !== 'PageIt-client' && curr.name !== 'PageIt-server' && curr.name !== 'Software-testing' && curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
                                 return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
                                     <div className="card">
-                                        <div className="d-flex align-items-center imagesizer_outer">
+                                        <a target="_blank" rel="noopener noreferrer" href={`https://github.com/UtkarshVijayvergia/${curr.name}/`}><div className="d-flex align-items-center imagesizer_outer">
                                             {
                                                 (curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'To-do-list-React' && curr.name !== 'Admin-panel-with-Django-MySQL' && curr.name !=='Project-Showcase' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?
                                                 <img src={require(`../components/images/sample.jpg`)} alt={curr.name} className="rounded imagesizer" width="100%" height="auto" ></img>
                                                 :
                                                 <img src={require(`../components/images/${curr.name}.jpg`)} alt={curr.name} className="rounded" width="100%" height="auto" ></img>
                                             }
-                                        </div>
+                                        </div></a>
                                         <br />
                                         <div className="d-flex">
                                             <div className="ml-3 w-100">
-                                                <h3 className="mb-0 mt-0 textLeft myname">{ curr.name }</h3>
+                                                <a id='alink' target="_blank" rel="noopener noreferrer" href={`https://github.com/UtkarshVijayvergia/${curr.name}/`}>
+                                                    <h3 className="mb-0 mt-0 textLeft myname">{ curr.name }</h3>
+                                                </a>
                                                 <div className='p-4'>
                                                     <span className="text-left" style={mydisc}>
                                                         { 
