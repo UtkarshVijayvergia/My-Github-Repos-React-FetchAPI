@@ -1,3 +1,7 @@
+.card-colour{
+    background-color: rgb(248, 248, 248);
+}
+
 .tagHeight{
     height : 60px;
 }
@@ -7,6 +11,10 @@
     margin-left: -2px;
     margin-right: -2px;
     height: 50px;
+}
+
+.myname:hover {
+    color: rgb(9, 105, 218);
 }
 
 #alink{
@@ -24,10 +32,45 @@
     margin: 3px 0 2px 2px;
     border-radius: 30px;
     display: inline-block; 
-    color:#0969da;
+    color:rgb(9, 105, 218);
 }
 
 
 .mydate{
     margin: -11px -11px -11px -11px ;
 }
+
+
+/* .dropdown {
+    background-color: #04AA6D;
+    color: rgb(247, 140, 140);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+} */
+
+/* Links inside the dropdown */
+/* .dropdown-content span {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+} */
+
+/* Change color of dropdown links on hover */
+/* .dropdown-content div:hover {background-color: #ddd;} */
+
+/* Show the dropdown menu on hover */
+/* .dropdown:hover .dropdown-content {display: block;} */
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */

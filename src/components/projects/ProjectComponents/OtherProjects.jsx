@@ -52,7 +52,7 @@ const OtherProjects = () => {
                     users.sort(sortFunction).map((curr) => {
                         if(curr.name !== 'PageIt-client' && curr.name !== 'Bennett-Bulletin' && curr.name !== 'PageIt-server' && curr.name !=='Project-Showcase' && curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'Software-testing' && curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
                             return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
-                                <div className="card">
+                                <div className="card card-colour">
                                     <a target="_blank" rel="noopener noreferrer" href={`https://github.com/UtkarshVijayvergia/${curr.name}/`}><div className="d-flex align-items-center imagesizer_outer">
                                         {
                                             (curr.name !== 'To-do-list-React' && curr.name !== 'Admin-panel-with-Django-MySQL' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?

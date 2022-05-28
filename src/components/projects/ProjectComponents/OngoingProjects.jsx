@@ -52,7 +52,7 @@ const OngoingProjects = () => {
                     users.sort(sortFunction).map((curr) => {
                         if(curr.name === 'Project-Showcase' || curr.name === 'PageIt-client' || curr.name === 'PageIt-server'){
                             return (<div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
-                                <div className="card">
+                                <div className="card card-colour">
                                     <a target="_blank" rel="noopener noreferrer" href={`https://github.com/UtkarshVijayvergia/${curr.name}/`}><div className="d-flex align-items-center imagesizer_outer">
                                         {
                                             (curr.name !=='Project-Showcase')?
