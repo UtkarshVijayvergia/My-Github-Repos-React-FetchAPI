@@ -8,13 +8,26 @@
 
 
 .myname{
+    /* text-align: center; */
+    padding-top: 12px;
     margin-left: -2px;
     margin-right: -2px;
+    
+    line-height: 50px;
     height: 50px;
+}
+
+.myname-exception{
+    text-align: center;
+    padding-top: 10px;
+    margin-left: -2px;
+    margin-right: -2px;
+    height: 47px;
 }
 
 .myname:hover {
     color: rgb(9, 105, 218);
+    text-decoration-line: underline;
 }
 
 #alink{
@@ -35,6 +48,11 @@
     color:rgb(9, 105, 218);
 }
 
+.mytag:hover{
+    background: rgb(9, 105, 218);
+    color:white;
+}
+
 
 .mydate{
     margin: -11px -11px -11px -11px ;
@@ -42,7 +60,7 @@
 
 
 /* .dropdown {
-    background-color: #04AA6D;
+    background-color: rgb(248, 248, 248);
     color: rgb(247, 140, 140);
     padding: 16px;
     font-size: 16px;
@@ -59,7 +77,7 @@
 } */
 
 /* Links inside the dropdown */
-/* .dropdown-content span {
+/* .dropdown-content div {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -74,3 +92,4 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+

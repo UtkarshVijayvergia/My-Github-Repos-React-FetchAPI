@@ -68,13 +68,13 @@ const OngoingProjects = () => {
                                                 <h3 className="mb-0 mt-0 textLeft myname">{ curr.name }</h3>
                                             </a>
                                             <div className='p-4'>
-                                                <span className="text-left" style={mydisc}>
+                                                <div className="text-left" style={mydisc}>
                                                     { 
                                                         (curr.description == null)?
                                                         <span>left to update</span>: curr.description
                                                         
                                                     }
-                                                </span>
+                                                </div>
                                             </div>
                                             <div className='tagHeight'>
                                                 {
