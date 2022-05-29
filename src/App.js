@@ -9,8 +9,7 @@ import RepoOrder from './components/RepoOrder';
 function App() {
     return (
         <div className="App">
-            {/* <FetchAPI/>
-            <RepoOrder/> */}
+            {/* <FetchAPI/> */}
             <Projects/>
         </div>
     );

@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import moment from "moment";
 import "./projects.css"
+import { Button, Collapse } from 'react-bootstrap';
 
 
-const OtherProjects = () => {
-
-    let mydisc = {
-        "display": "block",
-        "justifyContent": "right",
-        "marginLeft": "-15px",
-        "marginRight": "-15px",
-        "height":"130px",
-    }
-
-    let myStyle = {
-        "paddingRight": "30px",
-        "paddingLeft": "30px",        
-    }
+const OtherProjects = (props) => {
+    const [open, setOpen] = useState(false);
 
 
     const [users, setUsers] = useState([])
@@ -51,54 +40,73 @@ const OtherProjects = () => {
                 {
                     users.sort(sortFunction).map((curr) => {
                         if(curr.name !== 'PageIt-client' && curr.name !== 'Bennett-Bulletin' && curr.name !== 'PageIt-server' && curr.name !=='Project-Showcase' && curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'Software-testing' && curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
-                            return <div className="col-10 col-md-3 mt-5" style={myStyle} key={ curr.id }>
-                                <div className="card card-colour">
-                                    <a target="_blank" rel="noopener noreferrer" href={`https://github.com/UtkarshVijayvergia/${curr.name}/`}><div className="d-flex align-items-center imagesizer_outer">
-                                        {
-                                            (curr.name !== 'To-do-list-React' && curr.name !== 'Admin-panel-with-Django-MySQL' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?
-                                            <img src={require(`../images/sample.jpg`)} alt={curr.name} className="rounded imagesizer" width="100%" height="auto" ></img>
-                                            :
-                                            <img src={require(`../images/${curr.name}.jpg`)} alt={curr.name} className="rounded" width="100%" height="auto" ></img>
-                                        }
-                                    </div></a>
-                                    <br />
-                                    <div className="d-flex">
-                                        <div className="ml-3 w-100">
-                                            <a id='alink' target="_blank" rel="noopener noreferrer" href={`https://github.com/UtkarshVijayvergia/${curr.name}/`}>
-                                                <h3 className="mb-0 mt-0 textLeft myname">{ curr.name }</h3>
-                                            </a>
-                                            <div className='p-4'>
-                                                <div className="text-left" style={mydisc}>
-                                                    { 
-                                                        (curr.description == null)?
-                                                        <span>left to update</span>: curr.description
-                                                        
+                            return (<div className="col-10 col-lg-4 col-md-6 col-sm-12 mt-2 myStyle" key={ curr.id }>
+                                <div className="card card-prop">
+
+                                    <Button variant="light"  className="collapse-colour"
+                                        onMouseEnter={() => setOpen(!open)}
+                                        onMouseLeave={() => setOpen(!open)}
+                                        aria-controls="example-collapse-text"
+                                        aria-expanded={open}>
+                                        
+                                        <a target="_blank" rel="noopener noreferrer" href={`https://github.com/UtkarshVijayvergia/${curr.name}/`}>
+                                            <div className="d-flex align-items-center imagesizer_outer">
+                                            {
+                                                (curr.name !== 'To-do-list-React' && curr.name !== 'Admin-panel-with-Django-MySQL' && curr.name!=='Expense-Manager' && curr.name!=='php-mysql-form-filler')?
+                                                <img src={require(`../images/sample.jpg`)} alt={curr.name} className="rounded imagesizer dropdown" width="100%" height="auto" ></img>
+                                                :
+                                                <img src={require(`../images/${curr.name}.jpg`)} alt={curr.name} className="rounded dropdown" width="100%" height="auto" ></img>
+                                            }
+                                            </div>
+                                        </a>
+                                    
+                                        <div className="d-flex">
+                                            <div className="ml-3 w-100">
+                                                <a id='alink' target="_blank" rel="noopener noreferrer" href={`https://github.com/UtkarshVijayvergia/${curr.name}/`}>
+                                                    {
+                                                        (props.ScreenWidth<=1800 && curr.name === 'Admin-panel-with-Django-MySQL')?
+                                                        <center><h3 className="mb-0 mt-0 textLeft myname-exception">{ curr.name }</h3></center>
+                                                        :
+                                                        <center><h3 className="mb-0 mt-0 textLeft myname">{ curr.name }</h3></center>
+                                                    }
+                                                    <br />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    
+                                        <Collapse in={open}>
+                                            <div id="example-collapse-text">
+                                                <div className='p-4'>
+                                                    <div className="text-left">
+                                                        { 
+                                                            (curr.description == null)?
+                                                            <span>left to update</span>: curr.description
+                                                            
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div className='tagHeight'>
+                                                    {
+                                                        curr.topics.map((temp, index) => {
+                                                            return (<>
+                                                                <div key={ index } className="tags mytag">
+                                                                    {curr.topics[index]}
+                                                                </div>
+                                                                &nbsp;
+                                                            </>)
+                                                        })
                                                     }
                                                 </div>
+                                                <hr />
+                                                <div className="text-left mydate">
+                                                    Created on: { moment(curr.created_at, 'YYYY/MM/DD').format('MMM')} {moment(curr.created_at).utc().format('YYYY') }
+                                                </div>
                                             </div>
-                                            <div className='tagHeight'>
-                                                {
-                                                    curr.topics.map((topics_curr, index) => {
-                                                        return <>
-                                                            <div key={index} className="tags mytag">
-                                                                {curr.topics[index]}
-                                                            </div>
-                                                            &nbsp;
-                                                        </>
-                                                    })
-                                                }
-                                            </div>
-                                            <br />
-                                            <hr />
-                                            <div className="text-left mydate">
-                                                Created on: { moment(curr.created_at, 'YYYY/MM/DD').format('MMM')} {moment(curr.created_at).utc().format('YYYY') }
-                                            </div>
-                                            <br />
-                                        </div>
-                                    </div>
-                                </div>
-                                <br /><br /><br />
-                            </div>    
+                                        </Collapse>
+                                    </Button> 
+                                </div><br /><br />
+                            </div>
+                            )
                         }    
                     })
                 }

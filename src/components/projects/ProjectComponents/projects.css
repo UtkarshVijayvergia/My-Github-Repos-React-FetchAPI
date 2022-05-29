@@ -1,10 +1,31 @@
-.card-colour{
-    background-color: rgb(248, 248, 248);
+
+
+.card-prop{
+    background-color: #830000;
 }
 
-.tagHeight{
-    height : 60px;
+.collapse-colour:hover{
+    background-color: #dadada;
 }
+
+
+/* .gridder{
+    grid-column: span 3;
+} */
+
+/* @media (max-width: 768px){
+    .gridder{
+        grid-column: span 3;
+    }
+} */
+
+.myStyle {
+    padding-right: 30px;
+    padding-left: 30px;     
+}
+/* .tagHeight{
+    height : 60px;
+} */
 
 
 .myname{
@@ -40,7 +61,7 @@
     background: #ddf4ff;
     font-size: 12px;
     font-weight: 600;
-    line-height: 20px;
+    /* line-height: 20px; */
     padding: 3px 10px;
     margin: 3px 0 2px 2px;
     border-radius: 30px;
@@ -56,8 +77,20 @@
 
 .mydate{
     margin: -11px -11px -11px -11px ;
+    padding-bottom: 15px;
 }
 
+
+
+/* @media (max-width: 768px){
+    .myname{
+        text-align: center;
+        padding-top: 10px;
+        margin-left: -2px;
+        margin-right: -2px;
+        height: 47px;
+    }
+} */
 
 /* .dropdown {
     background-color: rgb(248, 248, 248);
