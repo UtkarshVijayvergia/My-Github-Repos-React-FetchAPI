@@ -53,12 +53,12 @@ const Projects = () => {
       <h2>ONGOING PROJECTS</h2>
       <OngoingProjects ScreenWidth={ScreenWidth} />
       <hr className='container' />
-      <br />
+      
 
       <h2>MY PROJECTS</h2>
       <TopProjects  ScreenWidth={ScreenWidth }/>
       <hr className='container'/>
-      <br />
+      
 
       <h2>OTHER PROJECTS</h2>
       <OtherProjects ScreenWidth={ScreenWidth} />

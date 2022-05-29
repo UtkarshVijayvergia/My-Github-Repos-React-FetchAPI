@@ -40,14 +40,15 @@ const OtherProjects = (props) => {
                 {
                     users.sort(sortFunction).map((curr) => {
                         if(curr.name !== 'PageIt-client' && curr.name !== 'Bennett-Bulletin' && curr.name !== 'PageIt-server' && curr.name !=='Project-Showcase' && curr.name !== 'Car-sale-and-usage-analysis' && curr.name !== 'Software-testing' && curr.name !== 'php-jwt' && curr.name !== 'Software-Engineering' && curr.name !== 'Coursera---HTML-CSS-and-Javascript-for-Web-Developers' && curr.name !== 'Cryptonite' && curr.name !== 'All-in-one-Linked-List' ){
-                            return (<div className="col-10 col-lg-4 col-md-6 col-sm-12 mt-2 myStyle" key={ curr.id }>
+                            return (<div className="col-10 col-lg-4 col-md-6 col-sm-12 mt-2 myStyle" key={ curr.name }>
                                 <div className="card card-prop">
-
+                                    
                                     <Button variant="light"  className="collapse-colour"
                                         onMouseEnter={() => setOpen(!open)}
                                         onMouseLeave={() => setOpen(!open)}
                                         aria-controls="example-collapse-text"
                                         aria-expanded={open}>
+                                    
                                         
                                         <a target="_blank" rel="noopener noreferrer" href={`https://github.com/UtkarshVijayvergia/${curr.name}/`}>
                                             <div className="d-flex align-items-center imagesizer_outer">
