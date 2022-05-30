@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Project-Showcase/static/css/main.14ab6278.css",
-    "main.js": "/Project-Showcase/static/js/main.ba1bea0b.js",
+    "main.css": "/Project-Showcase/static/css/main.e6d1b616.css",
+    "main.js": "/Project-Showcase/static/js/main.849d48e6.js",
     "static/media/sample.jpg": "/Project-Showcase/static/media/sample.92dd3ced382b69a08335.jpg",
     "static/media/Admin-panel-with-Django-MySQL.jpg": "/Project-Showcase/static/media/Admin-panel-with-Django-MySQL.ae01944197eaf3da48ee.jpg",
     "static/media/Project-Showcase.jpg": "/Project-Showcase/static/media/Project-Showcase.c9e5176207bbe9457952.jpg",
@@ -10,11 +10,11 @@
     "static/media/To-do-list-React.jpg": "/Project-Showcase/static/media/To-do-list-React.c0084f43d1c47a4570ea.jpg",
     "static/media/Expense-Manager.jpg": "/Project-Showcase/static/media/Expense-Manager.49b59f3bc34b97130678.jpg",
     "index.html": "/Project-Showcase/index.html",
-    "main.14ab6278.css.map": "/Project-Showcase/static/css/main.14ab6278.css.map",
-    "main.ba1bea0b.js.map": "/Project-Showcase/static/js/main.ba1bea0b.js.map"
+    "main.e6d1b616.css.map": "/Project-Showcase/static/css/main.e6d1b616.css.map",
+    "main.849d48e6.js.map": "/Project-Showcase/static/js/main.849d48e6.js.map"
   },
   "entrypoints": [
-    "static/css/main.14ab6278.css",
-    "static/js/main.ba1bea0b.js"
+    "static/css/main.e6d1b616.css",
+    "static/js/main.849d48e6.js"
   ]
 }
