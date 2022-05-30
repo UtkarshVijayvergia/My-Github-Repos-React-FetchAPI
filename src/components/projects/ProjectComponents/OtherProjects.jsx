@@ -81,8 +81,9 @@ const OtherProjects = (props) => {
                                                     <div className="text-left">
                                                         { 
                                                             (curr.description == null)?
-                                                            <span>left to update</span>: curr.description
-                                                            
+                                                            <span>Left to Update</span>
+                                                            : 
+                                                            curr.description
                                                         }
                                                     </div>
                                                 </div>

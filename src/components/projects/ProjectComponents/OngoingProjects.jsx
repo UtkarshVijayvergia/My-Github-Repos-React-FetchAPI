@@ -76,10 +76,11 @@ const OngoingProjects = (props) => {
                                             <div id="example-collapse-text">
                                                 <div className='p-4'>
                                                     <div className="text-left">
-                                                        { 
+                                                    { 
                                                             (curr.description == null)?
-                                                            <span>left to update</span>: curr.description
-                                                            
+                                                            <span>Left to Update</span>
+                                                            : 
+                                                            curr.description
                                                         }
                                                     </div>
                                                 </div>
